@@ -80,7 +80,7 @@ p {
     cursor: pointer;
 }
 
-.overlay-hidden {
+.hidden {
     display: none;
 }
 
