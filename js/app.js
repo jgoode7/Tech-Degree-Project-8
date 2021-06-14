@@ -85,6 +85,7 @@ nextButton.addEventListener("click", e => {
     if(e.target === nextButton) {
       if(index === 11) {
         displayModal(0); 
+        index = 0;
       } else {
         displayModal(index +1);
       }
@@ -97,7 +98,7 @@ gridContainer.addEventListener('click', e => {
     if (e.target !== gridContainer) {
 
         const card = e.target.closest(".card");
-        const index = card.getAttribute('data-index');
+        const index = parseInt(card.getAttribute('data-index'));
 
         displayModal(index);
     }
