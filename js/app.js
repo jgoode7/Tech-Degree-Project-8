@@ -47,24 +47,24 @@ function displayModal(index) {
     let date = new Date(dob.date);
 
     const modalHTML = `
+        <button class="previous" id="previous">&#8249;</button>
         <img class="avatar" src="${picture.large}" />
-        <div class="text-conatiner">
-            <h2 class="name">${name.first} ${name.last}</h2>
-            <p class="email">${email}</p>
-            <p class="address">${city}</p>
-            <hr />
-            <p>${phone}</p>
-            <p class="address">${street.number} ${street.name}, ${state} ${postcode}</p>
-            <p>Birthday:
-${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
-        </div>
+        <button class="next" id="next">&#8250</button>
+            <div class="text-conatiner">
+                <h2 class="name">${name.first} ${name.last}</h2>
+                <p class="email">${email}</p>
+                <p class="address">${city}</p>
+                <hr />
+                <p>${phone}</p>
+                <p class="address">${street.number} ${street.name}, ${state} ${postcode}</p>
+                <p>Birthday:
+                ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
+            </div>
         `;
 
         overlay.classList.remove("hidden");
         modalConatainer.innerHTML = modalHTML;
 }
-
-//Event Listeners
 
 //Nearest Card
 gridContainer.addEventListener('click', e => {
@@ -82,3 +82,28 @@ gridContainer.addEventListener('click', e => {
 modalClose.addEventListener('click', () => {
     overlay.classList.add("hidden");
 });
+
+
+//Search Bar
+const input = document.querySelector('#search-bar');
+
+const executeSearch = (event) => {
+    const searchNames = document.querySelectorAll('.card .name');
+    const searchTerm = event.target.value.toLowerCase();
+    searchNames.forEach((searchName) => {
+        let text = searchName.textContent.toLowerCase();
+        let employee = searchName.parentElement.parentElement; 
+
+        if(text.includes(searchTerm)) {
+            employee.style.display = "";
+        } else {
+            employee.style.display = "none";
+        }
+    });   
+}
+input.addEventListener('keyup', executeSearch);
+input.addEventListener('search', executeSearch);
+
+
+
+

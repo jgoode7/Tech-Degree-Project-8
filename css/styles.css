@@ -15,26 +15,45 @@ h1 {
     font-family: 'Stint Ultra Condensed', cursive;
     font-size: 30px;
     font-weight: 200;
+    margin-bottom: 0;
     padding-bottom: 10px;
 }
 
 h2 {
+    
     font-family: copperplate;
     font-size: 13px;
 }
 
 p {
-    padding-top: 5px;
+    padding-top: 10px;
     font-size: 10px;
     color: #8C8B8B;
 }
 
+hr {
+    margin: 22px 0 18px 0;
+}
+
 /* Class Styles */
+
+.searchbar {
+    border: 2px solid #e2e2e2;
+    font-family: copperplate;
+    font-size: 12px;
+    width: 50vw;
+    height: 25px;
+    margin-bottom: 15px;
+    margin-right: auto;
+    border-radius: 7px;
+   
+}
+
 .card {
     display: flex;
     border: solid 1px #e2e2e2;
     border-radius: 7px;
-    height:  15vh;
+    height: 15vh;
 }
 
 .text-container {
@@ -50,7 +69,6 @@ p {
     align-self: center;
     width: 75px;
     height: 74px;
-
 }
 
 .overlay {
@@ -63,21 +81,39 @@ p {
 }
 
 .modal {
-    width: 375px;
+    width: 325px;
+    height: 52vh;
     margin: 15% auto auto;
     position: relative;
     text-align: center;
     background: #fff;
-    border: 1px solid #778;
-    border-radius: 5px;
+    border: 1px solid #e2e2e2;
+    border-radius: 15px;
     padding: 30px 20px;
+}
+
+.modal .avatar {
+    height: 100px;
+    width: 100px;
+}
+
+.modal h2 {
+    margin: 10px 0 5px 0;
 }
 
 .modal-close {
     position: absolute;
-    right: 15px;
-    top: 5px;
+    right: 10px;
+    top: 10px;
     cursor: pointer;
+}
+
+.address {
+    padding-top: 7px 0;
+}
+
+.email {
+    padding-top: 7px;
 }
 
 .hidden {
@@ -89,5 +125,4 @@ p {
     grid-template-columns: repeat(3, 1.5fr);
     grid-template-rows: repeat(4, 1fr);
     gap: 25px;
-    
 }
