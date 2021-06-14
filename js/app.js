@@ -64,8 +64,34 @@ function displayModal(index) {
 
         overlay.classList.remove("hidden");
         modalConatainer.innerHTML = modalHTML;
-}
 
+
+//Arrows to Cycle Through Cards
+
+let previousButton = document.getElementById('previous');
+let nextButton = document.getElementById('next');
+
+previousButton.addEventListener("click", e => {
+    if(e.target === previousButton) {
+      if(index === 0) {
+        displayModal(11); 
+      } else {
+        displayModal(index -1);
+      }
+    }
+  });
+
+nextButton.addEventListener("click", e => {
+    if(e.target === nextButton) {
+      if(index === 11) {
+        displayModal(0); 
+      } else {
+        displayModal(index +1);
+      }
+    }
+  });
+}
+  
 //Nearest Card
 gridContainer.addEventListener('click', e => {
     if (e.target !== gridContainer) {
